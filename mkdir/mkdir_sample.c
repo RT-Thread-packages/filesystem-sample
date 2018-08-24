@@ -1,3 +1,12 @@
+/* 
+ * Copyright (c) 2006-2018, RT-Thread Development Team 
+ * 
+ * SPDX-License-Identifier: Apache-2.0 
+ * 
+ * Change Logs: 
+ * Date             Author      Notes
+ * 
+ */
 /*
  * 程序清单：创建目录
  *
@@ -7,6 +16,7 @@
  * mkdir()函数用来创建一个目录，参数path 为目录名，
  * 参数mode 在当前版本未启用，输入0x777 即可。
 */
+
 #include <rtthread.h>
 #include <dfs_posix.h> /* 当需要使用文件操作时，需要包含这个头文件 */
 
