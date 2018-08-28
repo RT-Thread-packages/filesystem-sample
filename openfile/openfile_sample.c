@@ -38,8 +38,9 @@ static void openfile_sample(void *parameter)
     {
         size = read(fd, buffer, sizeof(buffer));
         close(fd);
+        if (size < 0)
+            return ;
     }
-
     rt_kprintf("%s", buffer);
 }
 /* 导出到 msh 命令列表中 */
