@@ -4,17 +4,17 @@
 
 这个软件包包含了文件系统使用的相关示例代码。
 
-### 1.1 目录结构
+### 1.1 例程说明
 
-| 目录          | 例程                   |
+| 文件          | 说明                   |
 | ------------- | ---------------------- |
-| readwrite     | 文件读写               |
-| rename        | 更改名称               |
-| stat          | 取得状态               |
-| mkdir         | 创建目录               |
-| opendir       | 打开目录               |
-| readdir       | 读取目录               |
-| tell_seek_dir | 保存与设置读取目录位置 |
+| readwrite_sample.c     | 文件读写               |
+| rename_sample.c        | 更改名称               |
+| stat_sample.c          | 取得状态               |
+| mkdir_sample.c         | 创建目录               |
+| opendir_sample.c       | 打开目录               |
+| readdir_sample.c       | 读取目录               |
+| tell_seek_dir_sample.c | 保存与设置读取目录位置 |
 
 ### 1.2 许可证
 
