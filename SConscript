@@ -1,44 +1,32 @@
 from building import *
-Import('rtconfig')
 
 src   = []
 cwd   = GetCurrentDir()
-group = []
-CPPPATH = []
+include_path = [cwd]
 
 # add filesystem samples.
-if GetDepend('FILESYSTEM_SAMPLES_USING_OPENFILE'):
-    src += Glob('openfile/*.c')
-    CPPPATH += [cwd + '/openfile']
 
 if GetDepend('FILESYSTEM_SAMPLES_USING_READWRITE'):
-    src += Glob('readwrite/*.c')
-    CPPPATH += [cwd + '/readwrite']
+    src += ['readwrite_sample.c']
 
 if GetDepend('FILESYSTEM_SAMPLES_USING_STAT'):
-    src += Glob('stat/*.c')
-    CPPPATH += [cwd + '/stat']
+    src += ['stat_sample.c']
 
 if GetDepend('FILESYSTEM_SAMPLES_USING_RENAME'):
-    src += Glob('rename/*.c')
-    CPPPATH += [cwd + '/rename']
+    src += ['rename_sample.c']
 
 if GetDepend('FILESYSTEM_SAMPLES_USING_MKDIR'):
-    src += Glob('mkdir/*.c')
-    CPPPATH += [cwd + '/mkdir']
+    src += ['mkdir_sample.c']
 
 if GetDepend('FILESYSTEM_SAMPLES_USING_OPENDIR'):
-    src += Glob('opendir/*.c')
-    CPPPATH += [cwd + '/opendir']
+    src += ['opendir_sample.c']
 
 if GetDepend('FILESYSTEM_SAMPLES_USING_READDIR'):
-    src += Glob('readdir/*.c')
-    CPPPATH += [cwd + '/readdir']
+    src += ['readdir_sample.c']
 
 if GetDepend('FILESYSTEM_SAMPLES_USING_TELL_SEEK_DIR'):
-    src += Glob('tell_seek_dir/*.c')
-    CPPPATH += [cwd + '/tell_seek_dir']
+    src += ['tell_seek_dir_sample.c']
 
-group = DefineGroup('filesystem-samples', src, depend = ['PKG_USING_FILESYSTEM_SAMPLES'], CPPPATH = CPPPATH)
+group = DefineGroup('filesystem-samples', src, depend = ['PKG_USING_FILESYSTEM_SAMPLES'], CPPPATH = include_path)
 
 Return('group')
