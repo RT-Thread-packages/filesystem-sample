@@ -28,7 +28,9 @@ static void telldir_sample(void)
     struct dirent *dp;
 
     /* 打开根目录 */
+    rt_kprintf("the directory is:\n");
     dirp = opendir("/");
+    
     for (dp = readdir(dirp); dp != RT_NULL; dp = readdir(dirp))
     {
         /* 保存第三个目录项的目录指针*/
@@ -50,8 +52,11 @@ static void telldir_sample(void)
     }
 
     /* 从第三个目录项开始打印*/
+    rt_kprintf("\nthe result of tell_seek_dir is:\n");
     for (dp = readdir(dirp); dp != NULL; dp = readdir(dirp))
+    {
         rt_kprintf("%s\n", dp->d_name);
+    }
 
     /* 关闭目录*/
     closedir(dirp);
