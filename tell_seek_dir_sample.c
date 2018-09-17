@@ -52,7 +52,7 @@ static void telldir_sample(void)
     }
 
     /* 从第三个目录项开始打印*/
-    rt_kprintf("\nthe result of tell_seek_dir is:\n");
+    rt_kprintf("the result of tell_seek_dir is:\n");
     for (dp = readdir(dirp); dp != NULL; dp = readdir(dirp))
     {
         rt_kprintf("%s\n", dp->d_name);
