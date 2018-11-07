@@ -29,9 +29,8 @@ static void readwrite_sample(void)
     {
         write(fd, s, sizeof(s));
         close(fd);
+        rt_kprintf("Write done.\n");
     }
-
-    rt_kprintf("Write done.\n");
 
     /* 以只读模式打开 /text.txt 文件 */
     fd = open("/text.txt", O_RDONLY);
@@ -39,11 +38,10 @@ static void readwrite_sample(void)
     {
         size = read(fd, buffer, sizeof(buffer));
         close(fd);
+        rt_kprintf("Read from file test.txt : %s \n", buffer);
         if (size < 0)
             return ;
     }
-
-    rt_kprintf("Read from file test.txt : %s \n", buffer);
 }
 /* 导出到 msh 命令列表中 */
 MSH_CMD_EXPORT(readwrite_sample, readwrite sample);
