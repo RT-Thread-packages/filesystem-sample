@@ -1,11 +1,11 @@
-/* 
- * Copyright (c) 2006-2018, RT-Thread Development Team 
- * 
- * SPDX-License-Identifier: Apache-2.0 
- * 
- * Change Logs: 
+/*
+ * Copyright (c) 2006-2018, RT-Thread Development Team
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * Change Logs:
  * Date             Author      Notes
- * 
+ *
  */
 /*
  * 程序清单：保存与设置读取目录位置
@@ -30,7 +30,7 @@ static void telldir_sample(void)
     /* 打开根目录 */
     rt_kprintf("the directory is:\n");
     dirp = opendir("/");
-    
+
     for (dp = readdir(dirp); dp != RT_NULL; dp = readdir(dirp))
     {
         /* 保存第三个目录项的目录指针*/
