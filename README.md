@@ -48,10 +48,10 @@ RT-Thread online packages
 
 在打开 filesystem samples package 后，当进行 BSP 编译时，选择的软件包相关源代码会被加入到 BSP 工程中进行编译。
 
-** API 列表 **
+**API 列表**
 
-| API                                                   | 功能                     |
-| ----------------------------------------------------- | ------------------------ |
+| API        | 功能                     |
+| -------------- | ------------------------ |
 | int open(const char *pathname, int oflag, int mode);  | 打开文件                 |
 | int close(int fd);                                    | 关闭文件                 |
 | size_t read(int fd, void *buf, size_t count);         | 读取数据                 |
@@ -74,5 +74,5 @@ RT-Thread online packages
 
 ## 5、联系方式 & 感谢
 
-* 维护：name
-* 主页：https://github.com/RT-Thread-packages/filesystem-sample.git
+* 维护：[misonyo](https://github.com/misonyo)
+* 主页：https://github.com/RT-Thread-packages/filesystem-sample
