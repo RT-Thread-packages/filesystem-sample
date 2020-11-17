@@ -1,78 +1,78 @@
 # filesystem samples package
 
-## 1、介绍
+[中文页](README_ZH.md) | English
 
-这个软件包包含了文件系统使用的相关示例代码。
+## 1. Introduction
 
-### 1.1 例程说明
+This package contains relevant sample code used by the file system.
 
-| 文件          | 说明                   |
+### 1.1 Example description
+
+| File | Description |
 | ------------- | ---------------------- |
-| readwrite_sample.c     | 文件读写               |
-| rename_sample.c        | 更改名称               |
-| stat_sample.c          | 取得状态               |
-| mkdir_sample.c         | 创建目录               |
-| opendir_sample.c       | 打开目录               |
-| readdir_sample.c       | 读取目录               |
-| tell_seek_dir_sample.c | 保存与设置读取目录位置 |
+| readwrite_sample.c | File read and write |
+| rename_sample.c | Change name |
+| stat_sample.c | Get status |
+| mkdir_sample.c | Create directory |
+| opendir_sample.c | Open directory |
+| readdir_sample.c | Read directory |
+| tell_seek_dir_sample.c | Save and set read directory location |
 
-### 1.2 许可证
+### 1.2 License
 
-filesystem samples package 遵循 Apache license v2.0 许可，详见 `LICENSE` 文件。
+The filesystem samples package complies with the Apache license v2.0, see the `LICENSE` file for details.
 
-### 1.3 依赖
+### 1.3 Dependency
 
-使用 filesystem samples package 需要在 RT-Thread 的 menuconfig 配置选项中使能文件系统相关功能，具体路径如下：
+To use the filesystem samples package, you need to enable file system related functions in the menuconfig configuration option of RT-Thread. The specific path is as follows:
 
 ```
 RT-Thread Components
     device virtual file system --->
-
 ```
 
-## 2、如何打开 filesystem samples package
+## 2. How to open the filesystem samples package
 
-使用 filesystem samples package 需要在 RT-Thread 的包管理器中选择它，具体路径如下：
+To use the filesystem samples package, you need to select it in the package manager of RT-Thread. The specific path is as follows:
 
 ```
 RT-Thread online packages
     miscellaneous packages --->
         samples: kernel and components samples --->
             a filesystem_samples package for rt-thread --->
-
 ```
 
-然后让 RT-Thread 的包管理器自动更新，或者使用 `pkgs --update` 命令更新包到 BSP 中。
+Then let RT-Thread's package manager automatically update, or use the `pkgs --update` command to update the package to the BSP.
 
-## 3、使用 filesystem samples package
+## 3. Use filesystem samples package
 
-在打开 filesystem samples package 后，当进行 BSP 编译时，选择的软件包相关源代码会被加入到 BSP 工程中进行编译。
+After opening the filesystem samples package, when performing BSP compilation, the source code of the selected package will be added to the BSP project for compilation.
 
-**API 列表**
+**API list**
 
-| API        | 功能                     |
+| API | Function |
 | -------------- | ------------------------ |
-| int open(const char *pathname, int oflag, int mode);  | 打开文件                 |
-| int close(int fd);                                    | 关闭文件                 |
-| size_t read(int fd, void *buf, size_t count);         | 读取数据                 |
-| size_t write(int fd, const void *buf, size_t count);  | 写入数据                 |
-| int rename(const char *oldpath, const char *newpath); | 更改名称                 |
-| int stat(const char *file_name, struct stat *buf);    | 取得状态                 |
-| int mkdir(const char *path, mode_t mode);             | 创建目录                 |
-| DIR* opendir(const char* name);                       | 打开目录                 |
-| struct dirent* readdir(DIR *d);                       | 读取目录                 |
-| off_t telldir(DIR *d);                                | 取得目录流的读取位置     |
-| void seekdir(DIR *d, off_t offset);                   | 设置读取目录的位置       |
-| void rewinddir(DIR *d);                               | 重设读取目录的位置到开头 |
-| int closedir(DIR* d);                                 | 关闭目录                 |
-| int rmdir(const char *pathname);                      | 删除目录                 |
-| int mkfs(const char * fs_name, const char * device)   | 格式化文件系统           |
+| int open(const char *pathname, int oflag, int mode); | open file |
+| int close(int fd); | close file |
+| size_t read(int fd, void *buf, size_t count); | Read data |
+| size_t write(int fd, const void *buf, size_t count); | write data |
+| int rename(const char *oldpath, const char *newpath); | change name |
+| int stat(const char *file_name, struct stat *buf); | Get status |
+| int mkdir(const char *path, mode_t mode); | Create directory |
+| DIR* opendir(const char* name); | Open directory |
+| struct dirent* readdir(DIR *d); | Read directory |
+| off_t telldir(DIR *d); | Get the reading position of the directory stream |
+| void seekdir(DIR *d, off_t offset); | Set the position of the read directory |
+| void rewinddir(DIR *d); | Reset the position of the read directory to the beginning |
+| int closedir(DIR* d); | close directory |
+| int rmdir(const char *pathname); | delete directory |
+| int mkfs(const char * fs_name, const char * device) | format file system |
 
-## 4、注意事项
+## 4. Matters needing attention
 
-暂无。
+Nothing.
 
-## 5、联系方式 & 感谢
+## 5. Contact & Thanks
 
-* 维护：[misonyo](https://github.com/misonyo)
-* 主页：https://github.com/RT-Thread-packages/filesystem-sample
+* Maintenance: [misonyo](https://github.com/misonyo)
+* Homepage: https://github.com/RT-Thread-packages/filesystem-sample
