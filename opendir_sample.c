@@ -17,7 +17,9 @@
  * 若读取目录成功，返回该目录结构，若读取目录失败，返回RT_NULL。
 */
 #include <rtthread.h>
-#include <dfs_posix.h> /* 当需要使用文件操作时，需要包含这个头文件 */
+/* 当需要使用文件操作时，需要包含下面两个头文件 */
+#include <unistd.h>
+#include <fcntl.h>
 
 static void opendir_sample(void)
 {

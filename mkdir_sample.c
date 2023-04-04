@@ -18,7 +18,9 @@
 */
 
 #include <rtthread.h>
-#include <dfs_posix.h> /* 当需要使用文件操作时，需要包含这个头文件 */
+/* 当需要使用文件操作时，需要包含下面两个头文件 */
+#include <unistd.h>
+#include <fcntl.h>
 
 static void mkdir_sample(void)
 {
