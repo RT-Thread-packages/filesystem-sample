@@ -18,9 +18,11 @@
  * 此外，每读取一次目录，目录流的指针位置将自动往后递推1 个位置。
 */
 #include <rtthread.h>
-/* 当需要使用文件操作时，需要包含下面两个头文件 */
-#include <unistd.h>
-#include <fcntl.h>
+#if RT_VER_NUM >= 0x40100
+#include <sys/_default_fcntl.h> /* 当需要使用文件操作时，需要包含这个头文件 */
+#else
+#include <dfs_posix.h>
+#endif /*RT_VER_NUM >= 0x40100*/
 
 static void readdir_sample(void)
 {
