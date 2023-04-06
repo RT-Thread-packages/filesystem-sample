@@ -19,7 +19,7 @@
 
 #include <rtthread.h>
 #if RT_VER_NUM >= 0x40100
-#include <sys/_default_fcntl.h> /* 当需要使用文件操作时，需要包含这个头文件 */
+#include <fcntl.h> /* 当需要使用文件操作时，需要包含这个头文件 */
 #else
 #include <dfs_posix.h>
 #endif /*RT_VER_NUM >= 0x40100*/
